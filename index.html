@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content"></div>
+
+    <script src="data.js"></script>
+    <script>
+      const dataContent = document.querySelector(".content");
+
+      const dataAdd = JSON.parse(data);
+      console.log(dataAdd);
+      dataAdd.forEach((element) => {
+        const imgContent = document.createElement("img");
+        imgContent.src = element.link;
+        dataContent.appendChild(imgContent);
+        imgContent.weight = element.weight;
+        imgContent.height = element.height;
+        const dataActivity = document.createElement("h1");
+        dataActivity.textContent = element.activity;
+        dataContent.appendChild(dataActivity);
+        const typeContent = document.createElement("p");
+        typeContent.textContent = element.type;
+        dataContent.appendChild(typeContent);
+      });
+    </script>
+  </body>
+</html>
